@@ -1,1 +1,1 @@
-# The English Languange Version
+# The Generated Blog Content of Der Reiskoch

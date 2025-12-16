@@ -1,0 +1,161 @@
+RewriteEngine on
+
+RewriteCond %{HTTP_HOST} !^www.der-reiskoch.de$
+RewriteCond %{REQUEST_URI} !^\/ads\.txt$
+RewriteRule ^(.*)$ https://www.der-reiskoch.de/$1 [R=301,L]
+
+# Wissenswerters ###########################################################################
+
+RewriteCond %{THE_REQUEST} ^GET\ /nachgekocht/
+RewriteRule ^nachgekocht/(.*) /wissenswertes/$1 [L,R=301]
+
+RewriteCond %{THE_REQUEST} ^GET\ /ausprobiert/
+RewriteRule ^ausprobiert/(.*) /wissenswertes/$1 [L,R=301]
+
+RewriteCond %{THE_REQUEST} ^GET\ /dies-und-das/
+RewriteRule ^dies-und-das/(.*) /wissenswertes/$1 [L,R=301]
+
+RewriteCond %{THE_REQUEST} ^GET\ /fluessiges/t
+RewriteRule ^fluessiges/(.*) /wissenswertes/$1 [L,R=301]
+
+RewriteCond %{THE_REQUEST} ^GET\ /fluessiges
+RewriteRule ^fluessiges /wissenswertes/ [L,R=301]
+
+RewriteCond %{THE_REQUEST} ^GET\ /wissenswert/
+RewriteRule ^wissenswert/(.*) /wissenswertes/$1 [L,R=301]
+
+# REZEPT ##################################################################################
+
+RewriteCond %{THE_REQUEST} ^GET\ /rezept/
+RewriteRule ^rezept/(.*) /rezepte/$1 [L,R=301]
+
+# ZUBEHÖR ###############################################################################
+
+RewriteCond %{THE_REQUEST} ^GET\ /utensilien/
+RewriteRule ^utensilien/(.*) /zubehoer/$1 [L,R=301]
+
+RewriteCond %{THE_REQUEST} ^GET\ /utensilien
+RewriteRule ^utensilien /zubehoer/ [L,R=301]
+
+RewriteCond %{THE_REQUEST} ^GET\ /tools/
+RewriteRule ^tools/(.*) /zubehoer/$1 [L,R=301]
+
+RewriteCond %{THE_REQUEST} ^GET\ /tools
+RewriteRule ^tools /zubehoer/ [L,R=301]
+
+# Tags ###############################################################################
+
+RewriteCond %{THE_REQUEST} ^GET\ /categories/
+RewriteRule ^categories/(.*) /tags/$1 [L,R=301]
+
+RewriteCond %{THE_REQUEST} ^GET\ /categories
+RewriteRule ^categories /tags/ [L,R=301]
+
+RewriteCond %{THE_REQUEST} ^GET\ /stichwort/
+RewriteRule ^stichwort/(.*) /tags/$1 [L,R=301]
+
+RewriteCond %{THE_REQUEST} ^GET\ /stichwort
+RewriteRule ^stichwort /tags/ [L,R=301]
+
+# Zutaten ###############################################################################
+
+RewriteCond %{THE_REQUEST} ^GET\ /zutaten/einkaufen
+RewriteRule ^zutaten/einkaufen/(.*) /zutaten/ [L,R=301]
+
+# Tagebuch ###############################################################################
+
+RewriteCond %{THE_REQUEST} ^GET\ /kurz-und-gut/
+RewriteRule ^kurz-und-gut/(.*) /tagebuch/$1 [L,R=301]
+
+RewriteCond %{THE_REQUEST} ^GET\ /thaipause/fotos/
+RewriteRule ^thaipause/fotos/(.*) /tagebuch/ [L,R=301]
+
+RewriteCond %{THE_REQUEST} ^GET\ /inspirationen/vlogs/
+RewriteRule ^inspirationen/vlogs/(.*) /inspirationen/videos/$1 [L,R=301]
+
+RewriteCond %{THE_REQUEST} ^GET\ /fotoalbum/
+RewriteRule ^fotoalbum/(.*) /tagebuch/ [L,R=301]
+
+RewriteCond %{THE_REQUEST} ^GET\ /tagebuch/foodie/
+RewriteRule ^tagebuch/foodie/(.*) /tagebuch/ [L,R=301]
+
+RewriteCond %{THE_REQUEST} ^GET\ /thaifood/fotos/
+RewriteRule ^thaifood/fotos/(.*) /tagebuch/ [L,R=301]
+
+RewriteCond %{THE_REQUEST} ^GET\ /thaifood/
+RewriteRule ^thaifood /tagebuch/ [L,R=301]
+
+RewriteCond %{THE_REQUEST} ^GET\ /tagebuch/thaifood/
+RewriteRule ^tagebuch/thaifood/(.*) /tagebuch/ [L,R=301]
+
+RewriteCond %{THE_REQUEST} ^GET\ /thaipause/fotos/
+RewriteRule ^thaipause/fotos/(.*) /tagebuch/ [L,R=301]
+
+RewriteCond %{THE_REQUEST} ^GET\ /thaipause/
+RewriteRule ^thaipause /tagebuch/ [L,R=301]
+
+RewriteCond %{THE_REQUEST} ^GET\ /tagebuch/thaipause/
+RewriteRule ^tagebuch/thaipause/(.*) /tagebuch/ [L,R=301]
+
+RewriteCond %{THE_REQUEST} ^GET\ /mittagspause/fotos/
+RewriteRule ^mittagspause/fotos/(.*) /tagebuch/ [L,R=301]
+
+RewriteCond %{THE_REQUEST} ^GET\ /mittagspause/
+RewriteRule ^mittagspause /tagebuch/ [L,R=301]
+
+RewriteCond %{THE_REQUEST} ^GET\ /tagebuch/mittagspause/
+RewriteRule ^tagebuch/mittagspause/(.*) /tagebuch/ [L,R=301]
+
+#https://www.der-reiskoch.de/thaipause/tagebuch/2021/10/25/?fbclid=IwAR2podBLMAIkhlREuBv6cbjDJ8hXazuK60LH05pIvYezjZGVLWg_8AH4TI4
+
+#remove facebook fbclid qeuery param
+RewriteCond %{QUERY_STRING} ^(.*?)(&?fbclid=[a-zA-Z0-9_-]+)$
+RewriteRule ^(.*)$ /$1?%1 [L,NE,R=301]
+
+###############################################################################################
+
+<IfModule mod_expires.c>
+
+ExpiresActive On
+
+ExpiresByType text/html "modification 4 hours"
+
+# Images
+ExpiresByType image/jpeg "access plus 1 year"
+ExpiresByType image/gif "access plus 1 year"
+ExpiresByType image/png "access plus 1 year"
+ExpiresByType image/webp "access plus 1 year"
+ExpiresByType image/svg+xml "access plus 1 year"
+ExpiresByType image/x-icon "access plus 1 year"
+
+# Video
+ExpiresByType video/webm "access plus 1 year"
+ExpiresByType video/mp4 "access plus 1 year"
+ExpiresByType video/mpeg "access plus 1 year"
+
+# Fonts
+ExpiresByType font/ttf "access plus 1 year"
+ExpiresByType font/otf "access plus 1 year"
+ExpiresByType font/woff2 "access plus 1 year"
+ExpiresByType font/woff "access plus 1 year"
+ExpiresByType application/font-woff2 "access plus 1 year"
+ExpiresByType application/font-woff "access plus 1 year"
+
+# CSS, JavaScript
+ExpiresByType text/css "access plus 1 year"
+ExpiresByType text/javascript "access plus 1 year"
+ExpiresByType application/javascript "access plus 1 year"
+
+# Others
+ExpiresByType application/pdf "access plus 1 year"
+ExpiresByType image/vnd.microsoft.icon "access plus 1 year"
+
+ExpiresDefault "access plus 1 year"
+
+</IfModule>
+
+# Conditional 404 pages based on language path
+<If "%{REQUEST_URI} =~ m#^/en/#">
+    ErrorDocument 404 /en/404.html
+</If>
+ErrorDocument 404 /404.html
