@@ -154,8 +154,4 @@ ExpiresDefault "access plus 1 year"
 
 </IfModule>
 
-# Conditional 404 pages based on language path
-<If "%{REQUEST_URI} =~ m#^/en/#">
-    ErrorDocument 404 /en/404.html
-</If>
 ErrorDocument 404 /404.html
