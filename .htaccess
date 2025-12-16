@@ -1,8 +1,8 @@
 RewriteEngine on
 
-RewriteCond %{HTTP_HOST} !^www.der-reiskoch.de$
+RewriteCond %{HTTP_HOST} !^en.der-reiskoch.de$
 RewriteCond %{REQUEST_URI} !^\/ads\.txt$
-RewriteRule ^(.*)$ https://www.der-reiskoch.de/$1 [R=301,L]
+RewriteRule ^(.*)$ https://en.der-reiskoch.de/$1 [R=301,L]
 
 # Wissenswerters ###########################################################################
 
