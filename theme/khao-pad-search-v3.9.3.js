@@ -6,7 +6,7 @@ import"./modulepreload-polyfill.js";const _=()=>{let t={};const e=document.getEl
         iconName="date-time"
         iconSizeFactor="5"
         iconOpacity="50%"
-    ><time datetime="">${t!==tn?t:"05.01.2021"}</time></khao-content-with-icon>`,z=()=>{const t=window.location.pathname;return t&&t!==""&&t.startsWith("/en/")?"en":"de"},nn=(t,e)=>{let s={url:"",display:""};const a=V(e).categoryMap;return a&&a.hasOwnProperty(t)&&(s=a[t]),s},an=t=>{let e="";if(t){const s=z(),n=nn(t.toLowerCase(),s),a=s==="de"?"Kategorie":"Category";n.url!==""&&n.display!==""&&(e=`<khao-content-with-icon iconName="folder" iconSizeFactor="5" iconOpacity="50%"><khao-link href="${n.url}" rel="category" title="${a} ${n.display}" priority="secondary">${n.display}</khao-link>
+    ><time datetime="">${t!==tn?t:"05.01.2021"}</time></khao-content-with-icon>`,z=()=>{const t=window.location.pathname,e=window.location.hostname;return t&&t!==""&&t.startsWith("/en/")||e&&(e==="en"||e.startsWith("en."))?"en":"de"},nn=(t,e)=>{let s={url:"",display:""};const a=V(e).categoryMap;return a&&a.hasOwnProperty(t)&&(s=a[t]),s},an=t=>{let e="";if(t){const s=z(),n=nn(t.toLowerCase(),s),a=s==="de"?"Kategorie":"Category";n.url!==""&&n.display!==""&&(e=`<khao-content-with-icon iconName="folder" iconSizeFactor="5" iconOpacity="50%"><khao-link href="${n.url}" rel="category" title="${a} ${n.display}" priority="secondary">${n.display}</khao-link>
                     </khao-content-with-icon>`)}return e},rn=t=>`<khao-content-with-icon
         iconName="noodle-soup"
         iconSizeFactor="5"
