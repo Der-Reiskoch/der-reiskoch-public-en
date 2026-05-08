@@ -9,7 +9,31 @@ RewriteRule ^(.*)$ https://www.der-reiskoch.de/$1 [R=301,L]
 # Redirect old /en/* URLs to English subdomain
 RewriteRule ^en/(.*)$ https://en.der-reiskoch.de/$1 [R=301,L]
 
+# Inspirationen ###########################################################################
+
+RewriteCond %{THE_REQUEST} ^GET\ /inspirationen/websites/
+RewriteRule ^inspirationen/websites/(.*) /inspirationen/blogs/$1 [L,R=301]
+
+RewriteCond %{THE_REQUEST} ^GET\ /inspirationen/gruppen/
+RewriteRule ^inspirationen/gruppen/(.*) /inspirationen/community/$1 [L,R=301]
+
+# Kochbücher ###########################################################################
+
+RewriteCond %{THE_REQUEST} ^GET\ /kochbucher/
+RewriteRule ^kochbucher/(.*) /inspirationen/buecher/$1 [L,R=301]
+
+# Getränke ###########################################################################
+
+RewriteCond %{THE_REQUEST} ^GET\ /getranke/
+RewriteRule ^getranke/(.*) /wissenswertes/$1 [L,R=301]
+
+RewriteCond %{THE_REQUEST} ^GET\ /getranke
+RewriteRule ^getranke /wissenswertes/ [L,R=301]
+
 # Wissenswerters ###########################################################################
+
+RewriteCond %{THE_REQUEST} ^GET\ /wissenswertes/schreibweisen-bei-thai-speisen/
+RewriteRule ^wissenswertes/schreibweisen-bei-thai-speisen/(.*) https://www.ahaan-thai.de/worterbuch/schreibweisen/ [L,R=301]
 
 RewriteCond %{THE_REQUEST} ^GET\ /nachgekocht/
 RewriteRule ^nachgekocht/(.*) /wissenswertes/$1 [L,R=301]
@@ -66,6 +90,9 @@ RewriteRule ^stichwort /tags/ [L,R=301]
 
 RewriteCond %{THE_REQUEST} ^GET\ /zutaten/einkaufen
 RewriteRule ^zutaten/einkaufen/(.*) /zutaten/ [L,R=301]
+
+RewriteRule ^zutaten/sojasosse-eine-ueberischt-nach-laendern/? /zutaten/ [L,R=301]
+RewriteRule ^zutaten/ein-probier-paket-von-yak-thai/? /zutaten/ [L,R=301]
 
 # Tagebuch ###############################################################################
 
