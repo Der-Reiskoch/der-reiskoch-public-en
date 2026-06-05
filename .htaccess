@@ -1,3 +1,5 @@
+AddCharset UTF-8 .txt
+
 RewriteEngine on
 
 RewriteCond %{HTTP_HOST} !^www\.der-reiskoch\.de$

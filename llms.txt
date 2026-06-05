@@ -1,0 +1,20 @@
+# Der Reiskoch
+
+> German food blog about Asian cuisine (primarily Thai), by Jens Ihrig.
+> The German version is available at https://www.der-reiskoch.de/
+
+Content covers recipes, ingredient guides, know-how articles, a culinary diary, and Thai food festival listings. Regional cuisines include Thai, Burmese, Khmer, Shan, and broader Southeast and East Asian cooking.
+
+## Sections
+
+- [Recipes](https://en.der-reiskoch.de/recipes/): Asian recipes from all over the world
+- [Pantry](https://en.der-reiskoch.de/pantry/): Essential Asian ingredients
+- [Alphabetical List of Asian Ingredients](https://en.der-reiskoch.de/pantry/ingredient-list-a-z/): Full A–Z ingredient index
+- [Asian Kitchen Know-How](https://en.der-reiskoch.de/know-how/): Articles and guides about Asian cooking
+- [Foodie Diary](https://en.der-reiskoch.de/diary/): Monthly diary of food discoveries and restaurant visits
+- [Thai Food Festival Calendar](https://en.der-reiskoch.de/calendar/): Calendar of Thai food events
+
+## Key Articles
+
+- [Ahaan Thai Food Dictionary](https://en.der-reiskoch.de/know-how/thai-food-dictionary/): Thai food dictionary with transliterations
+- [Thai Food Festivals 2026](https://en.der-reiskoch.de/calendar/thai-food-festivals-2026/): Current Thai food festival listings
