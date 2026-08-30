@@ -12,8 +12,8 @@ RewriteRule ^en/(.*)$ https://en.der-reiskoch.de/$1 [R=301,L]
 
 # Inspirationen ###########################################################################
 
-RewriteCond %{THE_REQUEST} ^GET\ /inspirationen/websites/
-RewriteRule ^inspirationen/websites/(.*) /inspirationen/blogs/$1 [L,R=301]
+RewriteCond %{THE_REQUEST} ^GET\ /inspirationen/blogs/
+RewriteRule ^inspirationen/blogs/(.*) /inspirationen/websites/$1 [L,R=301]
 
 RewriteCond %{THE_REQUEST} ^GET\ /inspirationen/gruppen/
 RewriteRule ^inspirationen/gruppen/(.*) /inspirationen/community/$1 [L,R=301]
