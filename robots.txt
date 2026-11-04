@@ -1,0 +1,12 @@
+User-agent: *
+Disallow: /tags/
+Disallow: /index.xml
+Disallow: /404.html
+Disallow: /system/
+Disallow: /link/
+Disallow: /bio-link/
+Disallow: /iframe-dialog-laden/
+Disallow: /nicht-verbunden/
+Disallow: /suchen/zufall/
+
+Sitemap: https://en.der-reiskoch.de/sitemap.xml
