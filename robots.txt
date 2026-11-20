@@ -8,5 +8,6 @@ Disallow: /bio-link/
 Disallow: /iframe-dialog-laden/
 Disallow: /nicht-verbunden/
 Disallow: /suchen/zufall/
+Disallow: /suchen/aktuell/
 
 Sitemap: https://en.der-reiskoch.de/sitemap.xml
